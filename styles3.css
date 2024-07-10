@@ -110,6 +110,8 @@
     visibility: hidden;
 }
 
+/*Remove todos os elementos com a classe st-emotion-cache-ch5dnh.
+REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 .st-emotion-cache-ch5dnh {
   display: none;
 }
