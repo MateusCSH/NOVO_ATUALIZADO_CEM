@@ -149,11 +149,11 @@ def cont_usuários():
                     porcentagem = (total_hrs.total_seconds() / 3600) / (total_hrs2.total_seconds() / 3600) * 100
 
 
-                    print("total_hrs_perio:", total_hrs2)
-                    print("total_hrs_total:", total_hrs)
+                    # print("total_hrs_perio:", total_hrs2)
+                    # print("total_hrs_total:", total_hrs)
 
-                    porcentagem2 = (total_hrs / total_hrs2) * 100
-                    print("Porcentagem:", porcentagem)
+                    # porcentagem2 = (total_hrs / total_hrs2) * 100
+                    # print("Porcentagem:", porcentagem)
 
                     col1, col2 = st.columns(2)
                     with col1:
