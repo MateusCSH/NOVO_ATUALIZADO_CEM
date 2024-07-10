@@ -1,0 +1,307 @@
+
+
+/* IMAGEM (TENTAR POR UMA ENGRENAGEM RODANDO COM AS PALAVRAS EM SICRONIA) */
+.st-emotion-cache-1v0mbdj.e115fcil1:hover{
+    animation: move_img 7s linear infinite;
+}
+@keyframes move_img{
+    from, to{
+        transform: rotateZ(0deg);
+    }
+
+    25%{
+        transform: rotateZ(45deg);
+    }
+    50%{
+        transform: rotateZ(0deg);
+    }
+    75%{
+        transform: rotateZ(-45deg);
+    }
+}
+
+
+.st-emotion-cache-xwtqgq.e1b2p2ww15{
+    background-color: rgb(52, 56, 61);
+    border-radius: 10%;
+    /* border-color: white; */
+    box-shadow: 0 0 0 2px cyan;
+}
+
+
+/*BOTÃO BROWSE FILLES*/
+.st-emotion-cache-hc3laj{
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 0 0 2px #ffffffc0;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    width: 200px;
+    animation: loop 1.5s linear infinite;
+}
+
+@keyframes loop{
+    from, to{
+        scale: 100%;
+    }
+
+    50%{
+        scale: 105%;
+    }
+}
+
+
+/*BOTÃO BROWSE FILLES no intervalo em que o mause fica em cima*/
+.st-emotion-cache-hc3laj:hover{
+    /* box-shadow: 0 0 0 5px #cc00ff60; */
+    box-shadow: none;
+    color: #ffffff;
+    /* transform: translate3d(5px, 35px, 0px) perspective(95px) rotateY(-10deg) translateY(-10px); */
+    transition: 1s;
+    animation: browse_files 2s linear infinite;
+}
+
+@keyframes browse_files{
+    from, to{
+        border: solid 5px #13d1d1;
+    }
+
+    25%{
+        border: solid 5px #13d182;
+        transform: rotateZ(7deg);     
+    }
+
+    50%{
+        border: solid 5px #13d13c;
+        transform: rotateZ(0deg);
+    }
+
+    75%{
+        transform: rotateZ(-7deg);
+    }
+
+    
+}
+
+
+
+
+
+/*Label laboratorio cem*/
+.st-emotion-cache-ltfnpr{
+    background-color: transparent;
+    color: rgb(23, 248, 3);
+}
+
+/* Span = # (identificação não por tag)*/
+
+/* BOTAO DE RECARREGAR A PAGINA ESCONDIDO AQUI*/
+
+/*#MainMenu{
+    visibility: hidden;
+}*/
+
+
+.stDeployButton{
+    visibility: hidden;
+}
+
+
+
+
+
+.metric{
+    /*background-image: linear-gradient(45deg, #13d1d1, #20c420, #88ff00);
+    width: 200px;
+    height: 50px;*/
+    margin: 20px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+    border-left: solid 0.4rem #4bcaca ;
+    border-bottom: 0.1rem solid #13d1d1;
+    border-top: 1px solid #13d1d1;
+}
+
+.metric span{
+    color: white;
+
+}
+
+.metric span.value{
+    color: white;
+    font-size: 20px;
+}
+
+.metric:hover{
+    background-image: linear-gradient(45deg, #13d1d1, #20c420, #88ff00);
+    scale: 105%;
+    transform: translate3d(0px, 5px, 0px);
+    transition: 1s;    
+}
+
+@keyframes tofly{
+
+}
+
+.metric span:hover{    
+    font-weight: bold
+}
+
+.metric span.value:hover{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/*ELSE - SEM ARQUIVO - 'sem_arquivo' , span  & span.com_valor*/
+
+.sem_arquivo{
+    background-color: #c0b735;
+    margin: 10px;
+
+    text-align: center;
+}
+
+.sem_arquivo span{
+    color: black;
+    font-weight: bold;
+}
+
+.sem_arquivo span.com_valor{
+    color: darkblue;
+}
+
+
+
+
+/* IMAGENS DOS MONITORES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.scroll{
+    margin-top: 10px;
+    margin-inline: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.scroll_container{
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: scrollInfinito 20s linear infinite;
+}
+
+.scroll_container:hover{
+    animation-play-state: paused;
+}
+
+
+.scroll_item{
+    background-color: none;
+    padding: 10px 20px;
+    white-space: nowrap;
+
+}
+/* .caption { 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+}*/
+
+.scroll_item img{
+    width: 250px;
+    height: 170px;
+    transition: transform 0.3s;
+    border-radius: 5px;
+}
+.scroll_item img:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 20px yellow;
+}
+
+
+@keyframes scrollInfinito {
+    from{
+        translate: 0;
+    }    
+    to{
+        translate: calc(-50%);
+    }
+}
+
+
+
+
+/*  PARTE 2 USUÁRIOS */
+
+
+
+.usuario{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: max-content;
+    padding: 10px;
+    /* font-weight: bold; */
+    
+    margin: 20px;
+    border-radius: 15px;
+    border: 1px solid cyan;
+}
+
+.usuario:hover{
+    background: linear-gradient(45deg, #13d1d1, #1365d1);
+    animation: loopusuário 2.0s linear infinite ;
+}
+
+@keyframes loopusuário{
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.05;
+    }
+}
+
+/* .usuario span:hover{
+    color: rgb(0, 89, 255);
+} */
+
+.usuario span.value{
+    color: white;
+}
+
+.usuario .value{
+    font-weight: bold;
+
+}
+
