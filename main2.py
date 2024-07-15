@@ -69,14 +69,18 @@ if tipo == 'MONITOR':
             st.subheader('',divider='rainbow')
             col1, col2, col3 = st.columns(3)
             qtdhoras = df_select['Horas'].sum()
-            maxhoras = int(df_select['Horas'].max())
+            # maxhoras = int(df_select['Horas'].max())
             qtdmoni = len(df_select['Nome'].unique())
+
+            pessoa_max_hr = df.groupby('Nome')['Horas'].sum().reset_index()
+            max_hr = pessoa_max_hr.nlargest(1,'Horas')
+            qtd_hr_max = max_hr['Horas'].iloc[0]
 
             
             with col1:     
                 st.markdown(f'<div class="metric"><span>HORAS ACUMULADAS</span><span class="value">{qtdhoras} hrs</span></div>', unsafe_allow_html=True)
             with col2:
-                st.markdown(f'<div class="metric"><span>HORAS MÁXIMA</span><span class="value">{maxhoras} hrs</span></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="metric"><span>HORAS MÁXIMA</span><span class="value">{qtd_hr_max} hrs</span></div>', unsafe_allow_html=True)
 
             with col3:
                 st.markdown(f'<div class="metric"><span>MONITORES</span><span class="value">{qtdmoni}</span></div>', unsafe_allow_html=True)
