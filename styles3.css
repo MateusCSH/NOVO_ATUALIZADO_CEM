@@ -313,3 +313,83 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 
 }
 
+
+
+
+/* PAGINA DE MONITOR CARTÃO INSTAGRAM */
+
+/* CAIXA / CONTAINER */
+.box {
+    border: solid 2px;
+    border-radius: 15px;
+    /* display: block; */
+    text-align: center;
+    /* justify-content: center; */
+    margin: 0 auto;
+    width: fit-content;
+    padding: 10px;  /* Adicione padding para espaçamento interno */
+    background-image: linear-gradient(45deg, rgb(62, 103, 236),rgb(0, 255, 213));
+
+}
+
+.box:hover{
+    scale: 1.1;
+    transition: 1s;
+}
+
+/* ICONE */
+.fa-solid.fa-user{
+    border: #1472ee 1px solid;
+    border-radius: 50px;
+    display: block;
+    margin: 0 auto;
+    width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 50px; /* Ajuste o tamanho do ícone conforme necessário */
+    line-height: 50px; /* Centraliza verticalmente o ícone */
+    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    color: #051cee; /* Cor do ícone */
+    margin-bottom: 10px; /* Adicione um espaço abaixo do ícone */
+}
+
+/* TEXTO */
+.box span{
+    display: block; /* Faz com que cada span ocupe uma linha separada */
+    margin-bottom: 5px; /* Adicione um espaço entre cada span */
+}
+
+/* SOCIAL MIDIA / ICONE / NOME */
+.social{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;  /*remove qualquer decoração de texto padrão*/
+    display: inline-block;  /*faz com que um elemento se comporte como uma caixa de bloco*/
+    font-size: 16px;
+    margin-top: 10px; /* Espaço acima do botão */
+    cursor: pointer; /* Cursor ao passar por cima */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+.social:hover {
+    background-color: darkred; /* Cor de fundo ao passar o mouse */
+}
+
+/* .social:active{
+    background-color: black; Cor de fundo ao clicar 
+    
+} */
+
+.msg {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+/* O espaço entre .box:hover e .msg indica que o seletor seleciona os elementos .msg que são descendentes do elemento .box  */
+.box:hover .msg {       
+    opacity: 1;
+    visibility: visible;
+}
+
