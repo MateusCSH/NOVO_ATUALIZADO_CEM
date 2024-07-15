@@ -343,12 +343,12 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     border-radius: 50px;
     display: block;
     margin: 0 auto;
-    width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
-    height: 50px; /* Ajuste o tamanho do ícone conforme necessário */
+    width: 50px; /* Tamanho do ícone*/
+    height: 50px; /*  Tamanho do ícone*/
     line-height: 50px; /* Centraliza verticalmente o ícone */
-    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
-    color: blue; /* Cor do ícone */
-    margin-bottom: 10px; /* Adicione um espaço abaixo do ícone */
+    font-size: 24px; /* Tamanho do ícone*/
+    color: white; /* Cor do ícone */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo do ícone */
 }
 
 /* TEXTO */
