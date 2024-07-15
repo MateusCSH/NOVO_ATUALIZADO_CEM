@@ -216,7 +216,7 @@ if tipo == 'MONITOR':
                     <span>LUGAR</span>
                     <span>NOME ESPAÇO</span>
                     <button class = "social"> INSTAGRAM </button>
-                    <div class="msg">www.site.com.br</div>
+                    <div class="msg">www.linksite.com.br</div>
                     </div>  ''', unsafe_allow_html=True)        
 
 else:
