@@ -210,6 +210,14 @@ if tipo == 'MONITOR':
 
         st.toast('ESPERANDO ARQUIVO', icon='❗')
 
+        
+        st.markdown(f'''<div class="box"> 
+                    <i class="fa-solid fa-user"></i> 
+                    <span>IFES CARIACICA</span>
+                    <span>CEM</span>
+                    <button class = "social"> INSTAGRAM </button>
+                    <div class="msg">www.instagram.com.br</div>
+                    </div>  ''', unsafe_allow_html=True)        
 
 else:
     cont_usuários()
