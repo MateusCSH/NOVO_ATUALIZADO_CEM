@@ -213,10 +213,10 @@ if tipo == 'MONITOR':
         
         st.markdown(f'''<div class="box"> 
                     <i class="fa-solid fa-user"></i> 
-                    <span>IFES CARIACICA</span>
-                    <span>CEM</span>
+                    <span>LUGAR</span>
+                    <span>NOME ESPAÇO</span>
                     <button class = "social"> INSTAGRAM </button>
-                    <div class="msg">www.instagram.com.br</div>
+                    <div class="msg">www.site.com.br</div>
                     </div>  ''', unsafe_allow_html=True)        
 
 else:
