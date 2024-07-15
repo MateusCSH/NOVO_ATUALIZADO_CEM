@@ -72,7 +72,7 @@ if tipo == 'MONITOR':
             # maxhoras = int(df_select['Horas'].max())
             qtdmoni = len(df_select['Nome'].unique())
 
-            pessoa_max_hr = df.groupby('Nome')['Horas'].sum().reset_index()
+            pessoa_max_hr = df_select.groupby('Nome')['Horas'].sum().reset_index()
             max_hr = pessoa_max_hr.nlargest(1,'Horas')
             qtd_hr_max = max_hr['Horas'].iloc[0]
 
