@@ -393,3 +393,59 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     visibility: visible;
 }
 
+
+
+
+
+
+/* CARTÃO TOP 3 MONITORES COM MAIOR FREQUÊNCIA */
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;     /* Adicionando espaçamentos iguais entre os elementos*/
+}
+
+.flex-box {
+    display: flex;  /* Define o tipo de exibição do elemento como flexível.*/
+    flex-direction: column; /*Os elementos filhos serão dispostos em uma coluna, um embaixo do outro.*/
+    align-items: center;
+    width: 120px;
+    height: 180px;
+    text-align: center; /* Texto será centralizado horizontalmente*/
+    margin: 30px;       /* Espaço entre os elementos*/
+    border-radius: 5px; 
+    border: solid gray;
+    background-image: linear-gradient(45deg, rgb(54, 165, 199), rgb(22, 137, 231));
+}
+
+.flex-box:hover{
+    scale: 1.1; 
+    transition: 0.5s;
+    background-image: linear-gradient(45deg, rgb(54, 93, 199), rgb(102, 22, 231));
+}
+
+.icon-container {
+    display: flex;  /* Define o tipo de exibição do elemento como flexível.*/
+    justify-content: center;    /* Define como os elementos filhos devem ser justificados (alinhados), no caso centralizados*/
+    margin-bottom: 10px;    /* Cria um espaço de 10px abaixo do elemento*/
+    margin-top: 10px;   /* Cria um espaço de 10px acima do elemento*/
+}
+
+.icon-container i {
+    font-size: 40px;
+    color: white;
+}
+
+.text-container {
+    display: flex;      /* Define o tipo de exibição do elemento como flexível.*/
+    flex-direction: column;     /*Os elementos filhos serão dispostos em uma coluna, um embaixo do outro.*/
+    align-items: center;    /* CENTRALIZA OS ITENS*/
+    font-weight: bold;      /* POR EM NEGRITO*/
+}
+
+.text-container span {
+    font-size: 20px;    /*AUMENTA O COTEÚDO PARA 20PX*/
+    display: block;     /* Elemento será exibido como um bloco, ocupando toda a largura disponível e criando um novo linha após ele*/
+    margin-bottom: 10px;      /* Cria um espaço de 10px abaixo do elemento*/
+}
+
