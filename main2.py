@@ -62,67 +62,110 @@ if tipo == 'MONITOR':
         st.write('Sua opção:', op)
 
         if op == 'Horas por Monitor':
-            view_img()
-            #grap_bar(df_select,'Nome', 'Horas')
-            grap_plotly(df_select, 'Horas', 'Nome')
 
+            inf, melhor_de_3 = st.tabs(['INFO. GERAL','HALL DOS MONITORES'])
 
-            st.info('Informações')
-            st.subheader('',divider='rainbow')
-            col1, col2, col3 = st.columns(3)
-            qtdhoras = df_select['Horas'].sum()
-            # maxhoras = int(df_select['Horas'].max())
-            qtdmoni = len(df_select['Nome'].unique())
-
-            pessoa_max_hr = df_select.groupby('Nome')['Horas'].sum().reset_index()
-            max_hr = pessoa_max_hr.nlargest(1,'Horas')
-            qtd_hr_max = max_hr['Horas'].iloc[0]
-
-            
-            with col1:     
-                st.markdown(f'<div class="metric"><span>HORAS ACUMULADAS</span><span class="value">{qtdhoras} hrs</span></div>', unsafe_allow_html=True)
-            with col2:
-                st.markdown(f'<div class="metric"><span>HORAS MÁXIMA</span><span class="value">{qtd_hr_max} hrs</span></div>', unsafe_allow_html=True)
-
-            with col3:
-                st.markdown(f'<div class="metric"><span>MONITORES</span><span class="value">{qtdmoni}</span></div>', unsafe_allow_html=True)
-
-        
-            
-            st.text('')
-            nome = st.selectbox('Escolha o monitor',
-                                    (sorted(df['Nome'].unique())))            
+            with inf:
+                view_img()
+                #grap_bar(df_select,'Nome', 'Horas')
+                grap_plotly(df_select, 'Horas', 'Nome')
     
-
-    #-----------------------
-            if nome:
-                df_select2 = df.query('Nome == @nome')
-                hrs_total = df['Horas'].sum()
-                hrs_selecionada = df_select2['Horas'].sum()
-                maxhoras = int(df_select2['Horas'].max())
-                porcentagem = (hrs_selecionada / hrs_total) * 100 if hrs_total != 0 else 0
-
-                col1, col2 = st.columns(2)
-                with col1:                
-                    st.metric('Total Horas',hrs_selecionada,)
+    
+                st.info('Informações')
+                st.subheader('',divider='rainbow')
+                col1, col2, col3 = st.columns(3)
+                qtdhoras = df_select['Horas'].sum()
+                # maxhoras = int(df_select['Horas'].max())
+                qtdmoni = len(df_select['Nome'].unique())
+    
+                pessoa_max_hr = df_select.groupby('Nome')['Horas'].sum().reset_index()
+                max_hr = pessoa_max_hr.nlargest(1,'Horas')
+                qtd_hr_max = max_hr['Horas'].iloc[0]
+    
+                
+                with col1:     
+                    st.markdown(f'<div class="metric"><span>HORAS ACUMULADAS</span><span class="value">{qtdhoras} hrs</span></div>', unsafe_allow_html=True)
                 with col2:
-                    st.metric('Máx horas',maxhoras,)
-
-                st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
+                    st.markdown(f'<div class="metric"><span>HORAS MÁXIMA</span><span class="value">{qtd_hr_max} hrs</span></div>', unsafe_allow_html=True)
+    
+                with col3:
+                    st.markdown(f'<div class="metric"><span>MONITORES</span><span class="value">{qtdmoni}</span></div>', unsafe_allow_html=True)
+    
+            
                 
-                fig = go.Figure(go.Indicator(
-                    mode="gauge+number",    #gráfico de gauge (ou medidor) + número
-                    value=porcentagem,
-                    title={'text': "Percentual de Horas [DF ORIGINAL]"},
-                    gauge={'axis': {'range': [None, 100]}}, #Define as configurações do gauge. Nesse caso, estamos definindo a escala do gauge para ir de 0 a 100.
-                    domain={'x': [0, 1], 'y': [0, 1]}   #Define a área do gráfico que será ocupada pelo gauge. Nesse caso, estamos definindo que o gauge ocupará toda a área do gráfico (x e y vão de 0 a 1).
-                ))
-
-                st.plotly_chart(fig)
+                st.text('')
+                nome = st.selectbox('Escolha o monitor',
+                                        (sorted(df['Nome'].unique())))            
+        
+    
+        #-----------------------
+                if nome:
+                    df_select2 = df.query('Nome == @nome')
+                    hrs_total = df['Horas'].sum()
+                    hrs_selecionada = df_select2['Horas'].sum()
+                    maxhoras = int(df_select2['Horas'].max())
+                    porcentagem = (hrs_selecionada / hrs_total) * 100 if hrs_total != 0 else 0
+    
+                    col1, col2 = st.columns(2)
+                    with col1:                
+                        st.metric('Total Horas',hrs_selecionada,)
+                    with col2:
+                        st.metric('Máx horas',maxhoras,)
+    
+                    st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
+                    
+                    fig = go.Figure(go.Indicator(
+                        mode="gauge+number",    #gráfico de gauge (ou medidor) + número
+                        value=porcentagem,
+                        title={'text': "Percentual de Horas [DF ORIGINAL]"},
+                        gauge={'axis': {'range': [None, 100]}}, #Define as configurações do gauge. Nesse caso, estamos definindo a escala do gauge para ir de 0 a 100.
+                        domain={'x': [0, 1], 'y': [0, 1]}   #Define a área do gráfico que será ocupada pelo gauge. Nesse caso, estamos definindo que o gauge ocupará toda a área do gráfico (x e y vão de 0 a 1).
+                    ))
+    
+                    st.plotly_chart(fig)
                 
+            with melhor_de_3:
 
-                
+                    df_agrupado = df_select.groupby('Nome')['Horas'].sum().reset_index()
+                    people = df_agrupado.nlargest(3,'Horas')
+                    people_name = people['Nome'].iloc[0]
+                    people_hrs = people['Horas'].iloc[0]
+                    people_name2 = people['Nome'].iloc[1]
+                    people_hrs2 = people['Horas'].iloc[1]
+                    people_name3 = people['Nome'].iloc[2]
+                    people_hrs3 = people['Horas'].iloc[2]
 
+                    st.markdown(f'''
+                            <div class="flex-container">
+                                <div class="flex-box">
+                                    <div class="icon-container">
+                                        <i class="fa-solid fa-user-large"></i>
+                                    </div>
+                                    <div class="text-container">
+                                        <span>{people_name}</span>
+                                        <span>{people_hrs} hrs</span>
+                                    </div>
+                                </div>
+                                <div class="flex-box">
+                                    <div class="icon-container">
+                                        <i class="fa-solid fa-user-group"></i>
+                                    </div>
+                                    <div class="text-container">
+                                        <span>{people_name2}</span>
+                                        <span>{people_hrs2} hrs</span>
+                                    </div>
+                                </div>
+                                <div class="flex-box">
+                                    <div class="icon-container">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <div class="text-container">
+                                        <span>{people_name3}</span>
+                                        <span>{people_hrs3} hrs</span>
+                                    </div>
+                                </div>
+                            </div>
+                            ''', unsafe_allow_html=True)
 
     #--------------
 
