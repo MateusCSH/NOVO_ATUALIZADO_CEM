@@ -135,6 +135,8 @@ if tipo == 'MONITOR':
                     people_name3 = people['Nome'].iloc[2]
                     people_hrs3 = people['Horas'].iloc[2]
 
+                    st.markdown(f'<div class="sem_arquivo"> <span>CLASSIFICAÇÃO</span> <span class = "com_valor">HORAS TOTAIS</span></div> ',unsafe_allow_html=True)
+
                     st.markdown(f'''
                             <div class="flex-container">
                                 <div class="flex-box">
@@ -169,7 +171,7 @@ if tipo == 'MONITOR':
 
 
                 
-                        # CAPTANDO OS 3 MAIORES MONITORES RELACIOANDO A HORAS DE MONITORIA ---> TROCAR DPS PAAR OUTRA
+                    # CAPTANDO OS 3 MAIORES MONITORES RELACIOANDO A HORAS DE MONITORIA ---> TROCAR DPS PAAR OUTRA
                     df_agrupado = df_select.query('Motivo == "Monitoria"').groupby('Nome')['Horas'].sum().reset_index()
                     people = df_agrupado.nlargest(3, 'Horas')
 
