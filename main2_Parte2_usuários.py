@@ -9,6 +9,8 @@ from service.grap  import Quantidade_periodo
 
 def cont_usuários():
 
+    st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">', unsafe_allow_html=True)
+    
     up = st.sidebar.file_uploader('AQUIVO CSS USUÁRIO!', type='csv')
 
     if up is not None:
@@ -83,7 +85,10 @@ def cont_usuários():
             
 
 
-            Pessoas_periodo, Horas_periodo = st.tabs(['Quantidade de pessoas', 'Quantidade Horas por periodo'])
+            Pessoas_periodo, Horas_periodo, top3 = st.tabs(['Quantidade de pessoas', 'Quantidade Horas por periodo', 'Top 3'])
+
+
+            
            
             with Pessoas_periodo:
                 st.markdown(f'<div class="sem_arquivo"> <span>QUANTIDADE DE PESSOAS POR</span> <span class = "com_arquivo">PERIODO</span></div> ',unsafe_allow_html=True)
@@ -170,6 +175,72 @@ def cont_usuários():
                         gauge={'axis': {'range': [None, 100]}}))
 
                     st.plotly_chart(fig)
+
+                
+                with top3:                  
+
+                    lista = [p1, p2, p3, p4, p5]
+                    lista2 = {
+                        '1º PERIODO': p1,
+                        '2º PERIODO': p2,
+                        '3º PERIODO': p3,
+                        '4º PERIODO': p4,
+                        '5º PERIODO': p5,
+                        '6º PERIODO': p6,
+                        '7º PERIODO': p7,
+                        '8º PERIODO': p8,
+                        '9º PERIODO': p9,
+                        '10º PERIODO': p10
+                    }            
+
+                    
+
+                    list_ord = sorted(lista2.values(), reverse=True)
+                    first = list_ord[0]
+                    second = list_ord[1]
+                    third = list_ord[2]
+
+                    
+
+                    primeira_maior_chave = [k for k, v in lista2.items() if v == first][0]
+                    segundo_maior_chave = [k for k, v in lista2.items() if v == second][0]
+                    terceiro_maior_chave = [k for k, v in lista2.items() if v == third][0]
+
+                    st.markdown(f'<div class = "sem_arquivo"> <span> CLASSIFICAÇÃO POR </span> <span class = "com_arquivo">PERIODO</span></div>', unsafe_allow_html=True)
+                    
+                    st.markdown(f'''
+                            <div class="flex-container">
+                                <div class="flex-box">
+                                    <div class="icon-container">
+                                        <i class="fa-solid fa-user-large"></i>
+                                    </div>
+                                    <div class="text-container">
+                                        <span>{primeira_maior_chave}</span>
+                                        <span>{first}</span>
+                                    </div>
+                                </div>
+                                <div class="flex-box">
+                                    <div class="icon-container">
+                                        <i class="fa-solid fa-user-group"></i>
+                                    </div>
+                                    <div class="text-container">
+                                        <span>{segundo_maior_chave}</span>
+                                        <span>{second} </span>
+                                    </div>
+                                </div>
+                                <div class="flex-box">
+                                    <div class="icon-container">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <div class="text-container">
+                                        <span>{terceiro_maior_chave}</span>
+                                        <span>{third} </span>
+                                    </div>
+                                </div>
+                            </div>
+                            ''', unsafe_allow_html=True)
+
+    
 
 
     else:
