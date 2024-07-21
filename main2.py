@@ -81,15 +81,30 @@ if tipo == 'MONITOR':
                 pessoa_max_hr = df_select.groupby('Nome')['Horas'].sum().reset_index()
                 max_hr = pessoa_max_hr.nlargest(1,'Horas')
                 qtd_hr_max = max_hr['Horas'].iloc[0]
+
+                
+
+                # MÉDIA E DESVIO PADRÃO
+                med = df_select['Horas'].mean()
+                dvp = df_select['Horas'].std()
+
+                # HRS MÍNIMA
+                min_hr = pessoa_max_hr.nlargest(qtdmoni, 'Horas')
+                qtd_hrs_min = min_hr['Horas'].iloc[qtdmoni-1]
+                
     
                 
                 with col1:     
                     st.markdown(f'<div class="metric"><span>HORAS ACUMULADAS</span><span class="value">{qtdhoras} hrs</span></div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class="metric"><span>MÉDIA HORAS</span><span class="value">{med:.2f} hrs</span></div>', unsafe_allow_html=True)
+                    
                 with col2:
                     st.markdown(f'<div class="metric"><span>HORAS MÁXIMA</span><span class="value">{qtd_hr_max} hrs</span></div>', unsafe_allow_html=True)
-    
+                    st.markdown(f'<div class="metric"><span>HORAS MÍNIMA</span><span class="value">{qtd_hrs_min} hrs</span></div>', unsafe_allow_html=True)
+                    
                 with col3:
                     st.markdown(f'<div class="metric"><span>MONITORES</span><span class="value">{qtdmoni}</span></div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class="metric"><span>DESV. PADRÃO</span><span class="value">{dvp:.2f}</span></div>', unsafe_allow_html=True)
     
             
                 
