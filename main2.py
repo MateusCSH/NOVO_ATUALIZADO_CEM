@@ -322,7 +322,7 @@ if tipo == 'MONITOR':
                     <span>NOME DO LUGAR</span>
                     <span>ESPAÇO</span>                    
                     <div class="msg">ACESSE NOSSO INSTA</div>
-                    <span><a href="https://academico.ifes.edu.br" target="_blank">Acadêmico</a></span>
+                    <span><a href="https://www.youtube.com" target="_blank">Acadêmico</a></span>
                     </div>
                     ''', unsafe_allow_html=True)        
 
