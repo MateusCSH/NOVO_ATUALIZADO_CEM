@@ -357,29 +357,7 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     margin-bottom: 5px; /* Adicione um espaço entre cada span */
 }
 
-/* SOCIAL MIDIA / ICONE / NOME */
-.social{
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;  /*remove qualquer decoração de texto padrão*/
-    display: inline-block;  /*faz com que um elemento se comporte como uma caixa de bloco*/
-    font-size: 16px;
-    margin-top: 10px; /* Espaço acima do botão */
-    cursor: pointer; /* Cursor ao passar por cima */
-    border-radius: 5px; /* Borda arredondada */
-}
 
-.social:hover {
-    background-color: darkred; /* Cor de fundo ao passar o mouse */
-}
-
-/* .social:active{
-    background-color: black; Cor de fundo ao clicar 
-    
-} */
 
 .msg {
     opacity: 0;
@@ -391,6 +369,19 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 .box:hover .msg {       
     opacity: 1;
     visibility: visible;
+}
+
+/* LINK PARA ACESSAR A PÁGINA QUE DESEJA */
+.box a {
+    color: white;
+    opacity: 0;         /*Deixa oculto*/
+    visibility: hidden; /* Rerira a visibilidade - deixa oculto*/
+    transition: opacity 1.0s;
+}
+.box:hover a {       
+    opacity: 1;
+    visibility: visible;
+    background-image: linear-gradient(45deg, rgb(10, 213, 228), rgb(85, 131, 139));
 }
 
 
