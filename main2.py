@@ -316,13 +316,15 @@ if tipo == 'MONITOR':
         st.toast('ESPERANDO ARQUIVO', icon='❗')
 
         
-        st.markdown(f'''<div class="box"> 
-                    <i class="fa-solid fa-user"></i> 
-                    <span>LUGAR</span>
-                    <span>NOME ESPAÇO</span>
-                    <button class = "social"> INSTAGRAM </button>
-                    <div class="msg">www.linksite.com.br</div>
-                    </div>  ''', unsafe_allow_html=True)        
+        st.markdown(f'''
+                    <div class="box">
+                    <i class="fa-solid fa-user"></i>
+                    <span>IFES CARIACICA</span>
+                    <span>CEM</span>                    
+                    <div class="msg">ACESSE NOSSO INSTA</div>
+                    <span><a href="https://academico.ifes.edu.br" target="_blank">Acadêmico</a></span>
+                    </div>
+                    ''', unsafe_allow_html=True)        
 
 else:
     cont_usuários()
