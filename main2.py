@@ -319,8 +319,8 @@ if tipo == 'MONITOR':
         st.markdown(f'''
                     <div class="box">
                     <i class="fa-solid fa-user"></i>
-                    <span>IFES CARIACICA</span>
-                    <span>CEM</span>                    
+                    <span>NOME DO LUGAR</span>
+                    <span>ESPAÇO</span>                    
                     <div class="msg">ACESSE NOSSO INSTA</div>
                     <span><a href="https://academico.ifes.edu.br" target="_blank">Acadêmico</a></span>
                     </div>
