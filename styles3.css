@@ -289,11 +289,12 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 .usuario:hover span, .usuario:hover span.value{
     font-weight: bold;
     color: rgb(0, 0, 0);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .usuario:hover{
     background-image: linear-gradient(45deg, #262527, #0aedf5, #262527);
-    animation: loopusuário 2.5s linear infinite ;
+    animation: loopusuário 2.5s linear infinite;
 }
 
 @keyframes loopusuário{
