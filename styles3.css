@@ -288,7 +288,7 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 
 .usuario:hover span, .usuario:hover span.value{
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
