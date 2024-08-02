@@ -286,9 +286,14 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     border: 1px solid cyan;
 }
 
+.usuario:hover span, .usuario:hover span.value{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
 .usuario:hover{
-    background: linear-gradient(45deg, #13d1d1, #1365d1);
-    animation: loopusuário 2.0s linear infinite ;
+    background-image: linear-gradient(45deg, #262527, #0aedf5, #262527);
+    animation: loopusuário 2.5s linear infinite ;
 }
 
 @keyframes loopusuário{
@@ -300,13 +305,6 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     }
 }
 
-/* .usuario span:hover{
-    color: rgb(0, 89, 255);
-} */
-
-.usuario span.value{
-    color: white;
-}
 
 .usuario .value{
     font-weight: bold;
