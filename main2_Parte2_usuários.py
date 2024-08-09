@@ -73,6 +73,12 @@ def cont_usuários():
             total_hrs_motivo_EJ = horas_por_motivo_EJ.sum()
             horas_motivo_EJ, minutos_motivo_EJ = format_timedelta(total_hrs_motivo_EJ)
 
+            # MOTIVO -> DINAMICA
+            h_estudo_D = df[df['Motivo'] == 'DINAMICA']
+            horas_por_motivo_D = transformar_horas(h_estudo_D)
+            total_hrs_motivo_D = horas_por_motivo_D.sum()
+            horas_motivo_D, minutos_motivo_D = format_timedelta(total_hrs_motivo_D)
+
 
             st.markdown(f'<div class="sem_arquivo"> <span class="tex_info">QUANTIDADE DE HORAS POR</span> <span class = "com_arquivo">MOTIVO</span></div> ',unsafe_allow_html=True)
             col1, col2 = st.columns(2)
@@ -86,6 +92,7 @@ def cont_usuários():
             with col2:
                 st.markdown(f'<div class="usuario_motivo"><span class="tex_info">HORAS REUNIÃO</span><span class="value_motivo">{horas_motivo_R}:{minutos_motivo_R:02d} hrs</span></div>', unsafe_allow_html=True)
 
+                st.markdown(f'<div class="usuario_motivo"><span class="tex_info">HORAS DINÂMICA</span><span class="value_motivo">{horas_motivo_D}:{minutos_motivo_D:02d} hrs</span></div>', unsafe_allow_html=True)
         
         
         p1=0; p2=0; p3=0; p4=0; p5=0
