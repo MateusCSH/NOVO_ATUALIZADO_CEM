@@ -40,13 +40,52 @@ def cont_usuários():
             qtd_pessoas = len(df['Nome'])
 
 
+            st.markdown(f'<div class="sem_arquivo"> <span class="tex_info">QUANTIDADE DE HORAS</span> <span class = "com_arquivo">GERAL</span></div> ',unsafe_allow_html=True)
             col1, col2 = st.columns(2)
             with col1:
                 st.markdown(f'<div class="usuario"><span>HORAS ACUMULADAS</span><span class="value">{Conversão_hrs} hrs</span></div>', unsafe_allow_html=True)
             with col2:
                 st.markdown(f'<div class="usuario"><span>QUANTIDADE DE PASSOAS</span><span class="value">{qtd_pessoas}</span></div>', unsafe_allow_html=True)
 
+############ FAZENDO A PARTE DE MOTIVO ###################
+            # MOTIVO -> ESTUDO
+            h_estudo_E = df[df['Motivo'] == 'ESTUDO']           
 
+            horas_por_motivo_E = transformar_horas(h_estudo_E)
+            total_hrs_motivo_E = horas_por_motivo_E.sum()
+            horas_motivo_E, minutos_motivo_E = format_timedelta(total_hrs_motivo_E)
+            
+
+            #Ctrl + del apaga os espaços até a frase
+            
+            # MOTIVO -> REUNIÃO
+            h_estudo_R = df[df['Motivo'] == 'REUNIÃO']           
+
+            horas_por_motivo_R = transformar_horas(h_estudo_R)
+            total_hrs_motivo_R = horas_por_motivo_R.sum()
+            horas_motivo_R, minutos_motivo_R = format_timedelta(total_hrs_motivo_R)
+
+            # MOTIVO -> ENPRO-JR
+            h_estudo_EJ = df[df['Motivo'] == 'ENPRO-JR']           
+
+            horas_por_motivo_EJ = transformar_horas(h_estudo_EJ)
+            total_hrs_motivo_EJ = horas_por_motivo_EJ.sum()
+            horas_motivo_EJ, minutos_motivo_EJ = format_timedelta(total_hrs_motivo_EJ)
+
+
+            st.markdown(f'<div class="sem_arquivo"> <span class="tex_info">QUANTIDADE DE HORAS POR</span> <span class = "com_arquivo">MOTIVO</span></div> ',unsafe_allow_html=True)
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.markdown(f'<div class="usuario_motivo"><span class="tex_info">HORAS ESTUDO</span><span class="value_motivo">{horas_motivo_E}:{minutos_motivo_E:02d} hrs</span></div>', unsafe_allow_html=True)
+
+                st.markdown(f'<div class="usuario_motivo"><span class="tex_info">HORAS ENP_JUNIOR</span><span class="value_motivo">{horas_motivo_EJ}:{minutos_motivo_EJ:02d} hrs</span></div>', unsafe_allow_html=True)
+            
+            
+            with col2:
+                st.markdown(f'<div class="usuario_motivo"><span class="tex_info">HORAS REUNIÃO</span><span class="value_motivo">{horas_motivo_R}:{minutos_motivo_R:02d} hrs</span></div>', unsafe_allow_html=True)
+
+        
         
         p1=0; p2=0; p3=0; p4=0; p5=0
         p6=0; p7=0; p8=0; p9=0; p10=0;
@@ -143,7 +182,7 @@ def cont_usuários():
 
                     horas = transformar_horas(df_perio)
                     total_hrs = horas.sum()
-                    Conversão_hrs = format_timedelta(total_hrs) #VALORES EM STRING
+                    horas_periodo, minutos_periodo = format_timedelta(total_hrs) #VALORES EM STRING
 
 
                     horas2 = transformar_horas(df)
@@ -162,7 +201,7 @@ def cont_usuários():
 
                     col1, col2 = st.columns(2)
                     with col1:
-                        st.markdown(f'<div class="usuario"><span>HORAS POR PERIODO</span><span class="value">{Conversão_hrs} hrs</span></div>', unsafe_allow_html=True)
+                        st.markdown(f'<div class="usuario"><span>HORAS POR PERIODO</span><span class="value">{horas_periodo}:{minutos_periodo:02d} hrs</span></div>', unsafe_allow_html=True)
                     with col2:  
                         st.markdown(f'<div class="usuario"><span>PORCENTAGEM PERÍODO</span><span class="value">{porcentagem:.2f}% hrs</span></div>', unsafe_allow_html=True)
 
