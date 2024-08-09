@@ -35,18 +35,19 @@ def cont_usuários():
             
 
             total = transformar_horas(df)
-            total_sum = total.sum()
-            Conversão_hrs = format_timedelta(total_sum)   # Retorna conversão h:m   
+            total_sum = total.sum()  
+            horas1, minutos1 = format_timedelta(total_sum) 
             qtd_pessoas = len(df['Nome'])
-
 
             st.markdown(f'<div class="sem_arquivo"> <span class="tex_info">QUANTIDADE DE HORAS</span> <span class = "com_arquivo">GERAL</span></div> ',unsafe_allow_html=True)
             col1, col2 = st.columns(2)
             with col1:
-                st.markdown(f'<div class="usuario"><span>HORAS ACUMULADAS</span><span class="value">{Conversão_hrs} hrs</span></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="usuario"><span>HORAS ACUMULADAS</span><span class="value">{horas1}:{minutos1:02d} hrs</span></div>', unsafe_allow_html=True)
             with col2:
-                st.markdown(f'<div class="usuario"><span>QUANTIDADE DE PASSOAS</span><span class="value">{qtd_pessoas}</span></div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="usuario"><span>QUANTIDADE DE PESSOAS</span><span class="value">{qtd_pessoas}</span></div>', unsafe_allow_html=True)
 
+
+            
 ############ FAZENDO A PARTE DE MOTIVO ###################
             # MOTIVO -> ESTUDO
             h_estudo_E = df[df['Motivo'] == 'ESTUDO']           
