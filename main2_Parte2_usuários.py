@@ -181,24 +181,19 @@ def cont_usuários():
                         'Periodo == @hrs_periodo'
                     )
 
+                    # Convertendo e somando as horas somente do periodo desejado
                     horas = transformar_horas(df_perio)
                     total_hrs = horas.sum()
                     horas_periodo, minutos_periodo = format_timedelta(total_hrs) #VALORES EM STRING
 
-
+                    # Convertendo e somando as horas de todo o dataframe
                     horas2 = transformar_horas(df)
                     total_hrs2 = horas2.sum()
-                    Conversão_hrs2 = format_timedelta(total_hrs2) #VALORES EM STRING
+                    
 
                     #TRANSFORMANDO VALORES PARA SEGUNDO!
                     porcentagem = (total_hrs.total_seconds() / 3600) / (total_hrs2.total_seconds() / 3600) * 100
 
-
-                    # print("total_hrs_perio:", total_hrs2)
-                    # print("total_hrs_total:", total_hrs)
-
-                    # porcentagem2 = (total_hrs / total_hrs2) * 100
-                    # print("Porcentagem:", porcentagem)
 
                     col1, col2 = st.columns(2)
                     with col1:
