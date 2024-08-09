@@ -311,6 +311,48 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 
 }
 
+/*   ##############     MOTIVO      ###################*/
+
+.usuario_motivo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    width: 190px;
+    height: max-content;
+    border: cyan solid 1px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+
+.usuario_motivo:hover{
+    background-image: linear-gradient(45deg, #262527, #0aedf5, #262527);
+    font-weight: bold;
+    
+}
+
+.tex_info{
+    font-weight: bold;
+}
+
+
+.value_motivo {
+    font-weight: bold;
+    display: none; /* esconde o valor inicialmente */
+    color: black;
+  }
+  
+  .usuario_motivo:hover .tex_info{
+    display: none; /* esconde o texto inicial ao passar o mouse */
+  }
+  
+  .usuario_motivo:hover .value_motivo{
+    display: block; /* mostra o valor ao passar o mouse */
+  }
+
+
 
 
 
