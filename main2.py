@@ -266,7 +266,7 @@ if tipo == 'MONITOR':
 
             with inf:
 
-                st.markdown(f'<div class ="sem_arquivo"><span>INFORMAÇÕES POR</span> <span class="com_valor">MOTIVO</span> </div>', unsafe_allow_html=True)
+                st.markdown(f'<div class ="sem_arquivo"><span>INFORMAÇÕES HORAS POR</span> <span class="com_valor">MOTIVO</span> </div>', unsafe_allow_html=True)
                 st.subheader('',divider='rainbow')
                 
                 col1, col2, col3, col4 = st.columns(4)
