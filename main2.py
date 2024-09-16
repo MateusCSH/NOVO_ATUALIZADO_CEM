@@ -285,24 +285,24 @@ if tipo == 'MONITOR':
 
                 with col1:              
                 
-                    st.markdown(f'<div class = "metric"> <span>Horas - reunião </span> <span class="value">{reun} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Reunião </span> <span class="value">{reun} hrs</span> </div>', unsafe_allow_html=True)
                     st.markdown(f'<div class = "metric"> <span>Reunião </span> <span class="value">{porcent_reun:.2f} %</span> </div>', unsafe_allow_html=True)
 
                 with col2:
 
-                    st.markdown(f'<div class = "metric"> <span>Horas - monitoria </span> <span class="value">{monin} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Monitoria </span> <span class="value">{monin} hrs</span> </div>', unsafe_allow_html=True)
                     st.markdown(f'<div class = "metric"> <span>Monitoria </span> <span class="value">{porcent_moni:.2f} %</span> </div>', unsafe_allow_html=True)
 
 
                 with col3:
 
-                    st.markdown(f'<div class = "metric"> <span>Horas - aula </span> <span class="value">{aula} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Aula </span> <span class="value">{aula} hrs</span> </div>', unsafe_allow_html=True)
                     st.markdown(f'<div class = "metric"> <span>Aula </span> <span class="value">{porcent_aula:.2f} %</span> </div>', unsafe_allow_html=True)
 
 
                 with col4:           
 
-                    st.markdown(f'<div class = "metric"> <span>Horas - estudo </span> <span class="value">{estu} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Estudo </span> <span class="value">{estu} hrs</span> </div>', unsafe_allow_html=True)
                     st.markdown(f'<div class = "metric"> <span>Estudo </span> <span class="value">{porcent_estu:.2f} %</span> </div>', unsafe_allow_html=True)
 
 
