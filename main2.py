@@ -115,13 +115,14 @@ if tipo == 'MONITOR':
     
         #-----------------------
                 if nome:
+                    st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
+                  
                     df_select2 = df.query('Nome == @nome')
                     hrs_total = df['Horas'].sum()
                     hrs_selecionada = df_select2['Horas'].sum()
                     maxhoras = int(df_select2['Horas'].max())
                     porcentagem = (hrs_selecionada / hrs_total) * 100 if hrs_total != 0 else 0
     
-                    st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
 
                     col1, col2 = st.columns(2)
                     with col1:                
