@@ -121,13 +121,14 @@ if tipo == 'MONITOR':
                     maxhoras = int(df_select2['Horas'].max())
                     porcentagem = (hrs_selecionada / hrs_total) * 100 if hrs_total != 0 else 0
     
+                    st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
+
                     col1, col2 = st.columns(2)
                     with col1:                
                         st.metric('Total Horas',hrs_selecionada,)
                     with col2:
                         st.metric('Máx horas',maxhoras,)
     
-                    st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
                     
                     fig = go.Figure(go.Indicator(
                         mode="gauge+number",    #gráfico de gauge (ou medidor) + número
