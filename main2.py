@@ -232,7 +232,7 @@ if tipo == 'MONITOR':
 
         if op == 'Horas por situação':
 
-            bar, inf, pizza = st.tabs(['BARRAS','INFORMAÇÕES','PIZZA'])
+            bar, inf = st.tabs(['GRÁFICOS','INFORMAÇÕES'])
             
             with bar:
 
@@ -240,44 +240,8 @@ if tipo == 'MONITOR':
                 
                 grap_plotly(df_select, 'Horas','Motivo')
 
+                ########################################
 
-
-            with inf:
-
-                st.markdown(f'<div class ="sem_arquivo"><span>INFORMAÇÕES POR</span> <span class="com_valor">MOTIVO</span> </div>', unsafe_allow_html=True)
-                st.subheader('',divider='rainbow')
-                
-                col1, col2, col3, col4 = st.columns(4)
-                reun = df_select[df_select['Motivo'] == 'Reunião']['Horas'].sum()
-                monin = df_select[df_select['Motivo'] == 'Monitoria']['Horas'].sum()
-                aula = df_select[df_select['Motivo'] == 'Aula']['Horas'].sum()
-                estu = df_select[df_select['Motivo'] == 'Estudos']['Horas'].sum()
-
-                st.subheader('', divider='rainbow')
-
-                with col1:              
-                
-                    st.markdown(f'<div class = "metric"> <span>Horas - reunião </span> <span class="value">{reun} hrs</span> </div>', unsafe_allow_html=True)
-
-                with col2:
-
-                    st.markdown(f'<div class = "metric"> <span>Horas - monitoria </span> <span class="value">{monin} hrs</span> </div>', unsafe_allow_html=True)
-
-
-                with col3:
-
-                    st.markdown(f'<div class = "metric"> <span>Horas - aula </span> <span class="value">{aula} hrs</span> </div>', unsafe_allow_html=True)
-
-
-                with col4:           
-
-                    st.markdown(f'<div class = "metric"> <span>Horas - estudo </span> <span class="value">{estu} hrs</span> </div>', unsafe_allow_html=True)
-
-
-
-
-            with pizza:
-        
                 st.subheader('',divider='rainbow')
                 st.markdown(f'<div class = "sem_arquivo"> <span>PERCENTUAL POR CATEGORIA</span> <span class = "com_valor"> GRÁFICOS <span></span> </div>', unsafe_allow_html=True)
 
@@ -298,6 +262,50 @@ if tipo == 'MONITOR':
 
 
                 st.subheader('',divider='rainbow')
+                ##############################
+
+            with inf:
+
+                st.markdown(f'<div class ="sem_arquivo"><span>INFORMAÇÕES POR</span> <span class="com_valor">MOTIVO</span> </div>', unsafe_allow_html=True)
+                st.subheader('',divider='rainbow')
+                
+                col1, col2, col3, col4 = st.columns(4)
+                reun = df_select[df_select['Motivo'] == 'Reunião']['Horas'].sum()
+                monin = df_select[df_select['Motivo'] == 'Monitoria']['Horas'].sum()
+                aula = df_select[df_select['Motivo'] == 'Aula']['Horas'].sum()
+                estu = df_select[df_select['Motivo'] == 'Estudos']['Horas'].sum()
+
+
+                porcent_reun = (reun / (df_select['Horas'].sum())) * 100
+                porcent_moni = (monin / (df_select['Horas'].sum())) * 100
+                porcent_aula = (aula / (df_select['Horas'].sum())) * 100
+                porcent_estu = (estu / (df_select['Horas'].sum())) * 100
+
+                st.subheader('', divider='rainbow')
+
+                with col1:              
+                
+                    st.markdown(f'<div class = "metric"> <span>Horas - reunião </span> <span class="value">{reun} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Reunião </span> <span class="value">{porcent_reun:.2f} %</span> </div>', unsafe_allow_html=True)
+
+                with col2:
+
+                    st.markdown(f'<div class = "metric"> <span>Horas - monitoria </span> <span class="value">{monin} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Monitoria </span> <span class="value">{porcent_moni:.2f} %</span> </div>', unsafe_allow_html=True)
+
+
+                with col3:
+
+                    st.markdown(f'<div class = "metric"> <span>Horas - aula </span> <span class="value">{aula} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Aula </span> <span class="value">{porcent_aula:.2f} %</span> </div>', unsafe_allow_html=True)
+
+
+                with col4:           
+
+                    st.markdown(f'<div class = "metric"> <span>Horas - estudo </span> <span class="value">{estu} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Estudo </span> <span class="value">{porcent_estu:.2f} hrs</span> </div>', unsafe_allow_html=True)
+
+
 
                 # CRIA TABELA COM .PIVOT
         
