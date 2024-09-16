@@ -109,13 +109,13 @@ if tipo == 'MONITOR':
             
                 
                 st.text('')
+                st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
                 nome = st.selectbox('Escolha o monitor',
                                         (sorted(df['Nome'].unique())))            
         
     
         #-----------------------
                 if nome:
-                    st.markdown(f'<div class="sem_arquivo"> <span>PARTICIPAÇÃO PERCENTUAL POR</span> <span class = "com_arquivo">MONITOR</span></div> ',unsafe_allow_html=True)
                   
                     df_select2 = df.query('Nome == @nome')
                     hrs_total = df['Horas'].sum()
