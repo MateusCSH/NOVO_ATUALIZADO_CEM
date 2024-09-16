@@ -303,7 +303,7 @@ if tipo == 'MONITOR':
                 with col4:           
 
                     st.markdown(f'<div class = "metric"> <span>Horas - estudo </span> <span class="value">{estu} hrs</span> </div>', unsafe_allow_html=True)
-                    st.markdown(f'<div class = "metric"> <span>Estudo </span> <span class="value">{porcent_estu:.2f} hrs</span> </div>', unsafe_allow_html=True)
+                    st.markdown(f'<div class = "metric"> <span>Estudo </span> <span class="value">{porcent_estu:.2f} %</span> </div>', unsafe_allow_html=True)
 
 
 
