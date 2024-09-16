@@ -132,7 +132,7 @@ if tipo == 'MONITOR':
                     fig = go.Figure(go.Indicator(
                         mode="gauge+number",    #gráfico de gauge (ou medidor) + número
                         value=porcentagem,
-                        title={'text': "Percentual de Horas [DF ORIGINAL]"},
+                        title={'text': "Percentual de Horas em relação ao total"},
                         gauge={'axis': {'range': [None, 100]}}, #Define as configurações do gauge. Nesse caso, estamos definindo a escala do gauge para ir de 0 a 100.
                         domain={'x': [0, 1], 'y': [0, 1]}   #Define a área do gráfico que será ocupada pelo gauge. Nesse caso, estamos definindo que o gauge ocupará toda a área do gráfico (x e y vão de 0 a 1).
                     ))
