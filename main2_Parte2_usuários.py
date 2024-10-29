@@ -4,6 +4,7 @@ from datetime import datetime as dt
 from Notebook_aux import transformar_horas, format_timedelta
 import plotly.graph_objects as go
 from service.grap  import Quantidade_periodo
+from sercice.aux_main2_usu_hrs_perio import graf, total_time, selec_peri
 
 
 
@@ -217,6 +218,52 @@ def cont_usuários():
                         gauge={'axis': {'range': [None, 100]}}))
 
                     st.plotly_chart(fig)
+
+                    
+                    # MELHORIA
+                    a = df
+                    df['Diferença'] = df['Fim'] - df['Inicio']
+
+                    periodos = df['Periodo'].unique()
+                    seconds_1 = df.query("Periodo == @hrs_periodo")['Diferença'].dt.total_seconds()
+
+                    hr_min = seconds_1.apply(lambda x: divmod(x, 3600))
+                    df['Horas'] = hr_min.apply(lambda x: x[0])
+                    df['Segundos Restantes'] = hr_min.apply(lambda x: x[1])
+
+                    df['Minutos'] = df['Segundos Restantes'] // 60
+
+                    total_horas = df['Horas'].sum()
+                    total_minutos = df['Minutos'].sum()
+
+                    total_horas += total_minutos // 60
+                    total_minutos = total_minutos % 60
+                    hrs_m = total_horas + float(total_minutos/10)
+
+                    # Chamando funcão que paga as horas totais.
+                    total_timer = total_time(a) 
+                    porcent_peri = hrs_m / total_timer
+
+                    op = st.selectbox('Selecione o periodo de comparação', options=df['Periodo'].unique())
+
+                    comp = selec_peri(a, op)
+                    porcent_comp = (hrs_m / comp) * 100 - 100
+
+
+                    with st.expander("Comparação", icon="📊"):
+                        col1, col2, col3 = st.columns(3)
+                        with col2:
+                            with st.container(border=True):
+                                title = f"HORAS {hrs_periodo}"                            
+                                st.metric(label=title, value=hrs_m, delta=f'{porcent_comp:.2f}%') 
+
+                                resultado = f"⬆ {porcent_comp:.1f}%" if porcent_peri > 0 else f"⬇ {porcent_comp:.1f}%"
+                                
+                                st.markdown(resultado)              
+                                
+                        
+
+                        graf(a)
 
                 
                 with top3:                  
