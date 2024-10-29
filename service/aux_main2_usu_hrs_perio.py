@@ -40,7 +40,8 @@ def graf(df):
                 y='Horas',  # Usar horas no eixo y
                 title='Horas por Período',
                 labels={'Horas': 'Tempo (horas)', 'Periodo': 'Período'},
-                text='Tempo Formatado')  # Usando a coluna formatada
+                text='Tempo Formatado',
+                color_discrete_sequence=['gold'])  # Usando a coluna formatada
 
     # Exibir o gráfico
     fig.update_traces(texttemplate='%{text}', textposition='outside')
