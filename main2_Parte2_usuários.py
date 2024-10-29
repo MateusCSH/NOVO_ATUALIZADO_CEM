@@ -4,7 +4,7 @@ from datetime import datetime as dt
 from Notebook_aux import transformar_horas, format_timedelta
 import plotly.graph_objects as go
 from service.grap  import Quantidade_periodo
-from sercice.aux_main2_usu_hrs_perio import graf, total_time, selec_peri
+from service.aux_main2_usu_hrs_perio import graf, total_time, selec_peri
 
 
 
