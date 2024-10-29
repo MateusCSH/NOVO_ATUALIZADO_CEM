@@ -97,5 +97,4 @@ def selec_peri(df, x):
     total_horas += total_minutos // 60  # Converte minutos em horas
     total_minutos = total_minutos % 60   # Resto dos minutos
     hrs_m = total_horas + float(total_minutos/10)
-    st.write(f"Tempo total: {hrs_m} horas")
     return hrs_m
