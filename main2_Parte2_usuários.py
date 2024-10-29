@@ -257,9 +257,9 @@ def cont_usuários():
                                 title = f"HORAS {hrs_periodo}"                            
                                 st.metric(label=title, value=hrs_m, delta=f'{porcent_comp:.2f}%') 
 
-                                resultado = f"⬆ {porcent_comp:.1f}%" if porcent_peri > 0 else f"⬇ {porcent_comp:.1f}%"
+                                # resultado = f"⬆ {porcent_comp:.1f}%" if porcent_peri > 0 else f"⬇ {porcent_comp:.1f}%"
                                 
-                                st.markdown(resultado)              
+                                # st.markdown(resultado)              
                                 
                         
 
