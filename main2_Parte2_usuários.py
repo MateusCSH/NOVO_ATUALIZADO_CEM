@@ -253,9 +253,16 @@ def cont_usuários():
                     with st.expander("Comparação", icon="📊"):
                         col1, col2, col3 = st.columns(3)
                         with col2:
-                            with st.container(border=True):
-                                title = f"HORAS {hrs_periodo}"                            
-                                st.metric(label=title, value=hrs_m, delta=f'{porcent_comp:.2f}%') 
+                            with st.container(border=True):                                
+                                col1, col2 = st.columns(2)
+                                with col1:
+                                    title = f"{hrs_periodo}"                            
+                                    st.metric(label=title, value=f'{hrs_m}h', delta=f'{porcent_comp:.2f}%') 
+
+                                with col2:
+                                    porc = (comp / hrs_m) * 100 - 100
+                                    title = f"{op}"
+                                    st.metric(label=title, value=f'{comp}h', delta=f'{porc:.2f}') 
 
                                 # resultado = f"⬆ {porcent_comp:.1f}%" if porcent_peri > 0 else f"⬇ {porcent_comp:.1f}%"
                                 
