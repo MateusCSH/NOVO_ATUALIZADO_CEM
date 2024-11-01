@@ -240,9 +240,9 @@ if tipo == 'MONITOR':
             
             with bar:
 
-                st.markdown('<div class = "sem_arquivo"> <span>GRÁFICO DE HORAS POR</span> <span class = "com_valor">UTILIZAÇÃO</span> </div>', unsafe_allow_html=True)
-                
-                grap_plotly(df_select, 'Horas','Motivo')
+                st.markdown('<div class = "sem_arquivo"> <span>GRÁFICO DE HORAS POR</span> <span class = "com_valor">UTILIZAÇÃO</span> </div>', unsafe_allow_html=True)                
+                df_bg_st = df.groupby('Motivo')['Horas'].sum().reset_index()
+                grap_plotly(df_bg_st, 'Horas','Motivo')
 
                 ########################################
 
