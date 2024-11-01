@@ -67,8 +67,10 @@ if tipo == 'MONITOR':
 
             with inf:
                 view_img()
+                # Usei reset_index() para transformar a série em um DataFrame, já que resultante do groupby não e um Dataframe.
+                df_gb = df_select.groupby('Nome')['Horas'].sum().reset_index()
                 #grap_bar(df_select,'Nome', 'Horas')
-                grap_plotly(df_select, 'Horas', 'Nome')
+                grap_plotly(df_gb, 'Horas', 'Nome')
     
     
                 st.info('Informações')
