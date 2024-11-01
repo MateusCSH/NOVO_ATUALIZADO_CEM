@@ -365,6 +365,32 @@ if tipo == 'MONITOR':
                 print('a')
 
 
+                # Agrupando e adicionando coluna para identificar a origem
+                df_ag_mot = df3.groupby('Motivo')['Horas'].sum().reset_index()
+                df_ag_mot['Fonte'] = 'Mês anterior'  # Identifica a origem do df3
+
+                df_ag_mot2 = df4.groupby('Motivo')['Horas'].sum().reset_index()
+                df_ag_mot2['Fonte'] = 'Mês atual'  # Identifica a origem do df4
+
+                # Concatenando os DataFrames
+                df_soma = pd.concat([df_ag_mot, df_ag_mot2], ignore_index=True)
+
+                # Criando o gráfico
+                fig2 = px.bar(
+                    data_frame=df_soma,
+                    x='Motivo',
+                    y='Horas',
+                    text='Horas',  
+                    color='Fonte',  # Usa a coluna para diferenciar as barras.
+                    barmode='group',  
+                    title='Comparação Hoars por Motivo mês anterior x mês atual'
+                )
+
+                # Exibindo o gráfico
+                st.plotly_chart(fig2)
+                
+
+
                 # CRIA TABELA COM .PIVOT
         
         #df_select = df[df['Nome']==name]
