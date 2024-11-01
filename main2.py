@@ -330,9 +330,7 @@ if tipo == 'MONITOR':
                 dataframework = {
                     'Nome': ['M4S3', 'M5S2'],
                     'Horas': [df3['Horas'].sum(), df4['Horas'].sum()]
-                }
-
-                st.text(dataframework)
+                }              
 
 
                 # Criando o gráfico de barras agrupadas
