@@ -491,13 +491,13 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
 
 
 /* CEM NAME */
-svg path {
-    fill: transparent;
-    stroke: #fff;
-    stroke-width: 0.1;
-    stroke-dasharray: 50;
-    stroke-dashoffset: 50;
-    animation: TextAnimation ease-in-out 4s 1 forwards;
+.name_cem svg path {
+    fill: transparent !important;
+    stroke: #fff !important;
+    stroke-width: 0.1 !important;
+    stroke-dasharray: 50 !important;
+    stroke-dashoffset: 50 !important;
+    animation: TextAnimation ease-in-out 4s 1 forwards !important;
 }
 
 @keyframes TextAnimation {
