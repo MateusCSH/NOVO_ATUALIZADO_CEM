@@ -487,3 +487,30 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     display: block;     /* Elemento será exibido como um bloco, ocupando toda a largura disponível e criando um novo linha após ele*/
     margin-bottom: 10px;      /* Cria um espaço de 10px abaixo do elemento*/
 }
+
+
+
+/* CEM NAME */
+svg path {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: TextAnimation ease-in-out 4s 1 forwards;
+}
+
+@keyframes TextAnimation {
+    0% {
+        stroke-dashoffset: 50;
+    }
+
+    80% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: white;
+        stroke-dashoffset: 0;
+    }
+}
