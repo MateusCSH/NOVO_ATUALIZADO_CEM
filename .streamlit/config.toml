@@ -1,1 +1,7 @@
-
+[theme]
+base = "dark"  # Tema escuro
+primaryColor = "#00BCD4"  # Cor de elementos interativos (botões, links, etc.)
+backgroundColor = "#121212"  # Cor de fundo principal (escura)
+secondaryBackgroundColor = "#0288D1"  # Cor de fundo da barra lateral (mais escura que o fundo principal)
+textColor = "#E0E0E0"  # Cor do texto (claro para contrastar com o fundo escuro)
+font = "sans serif"  # Fonte
