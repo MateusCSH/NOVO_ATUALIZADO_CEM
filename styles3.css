@@ -515,4 +515,24 @@ REMOVEU O BOTÃO PARA ACESSAR PÁGINA NO GITHUB*/
     }
 }
 
+/* ICONES SOCIAL MIDIA */
 
+.fa-brands.fa-instagram, .fa-brands.fa-instalod, .fa-sharp.fa-solid.fa-circle-user {
+    color: #0933ee;  /* Cor do ícone Instagram */
+    font-size: 50px; /* Tamanho do ícone */
+}
+
+.fa-brands.fa-instagram:hover, .fa-brands.fa-instalod:hover, .fa-sharp.fa-solid.fa-circle-user:hover{
+    color: rgb(255, 255, 255);
+}
+.icon-user {
+    display: contents; 
+    flex-direction: column; /* Alinha os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    margin: 20px; /* Margem ao redor do contêiner */
+    width: max-content;
+    height: max-content;
+    /* border: 2px solid cyan; */
+    border-radius: 10px;
+}
