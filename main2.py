@@ -41,7 +41,8 @@ if tipo == 'MONITOR':
         df = pd.read_csv(up, sep=',')
         # .drop(0).drop(columns=0)
         # df.rename(columns={1:'Nome',2:'Horas',3:'Motivo'}, inplace=True)
-        df = df[["Nome:", "Tempo de permanência (em horas):", "Motivo:"]]
+        df = df[["Nome", "Tempo de permanência (em horas)", "Motivo"]]
+        df = df.rename(columns={"Tempo de permanência (em horas)": "Horas"})
         df['Horas'] = df['Horas'].astype(int)
 
         
