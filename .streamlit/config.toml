@@ -1,7 +1,7 @@
 [theme]
 base = "dark" 
 primaryColor = "#00BCD4"  #elementos interativos 
-backgroundColor = "#121212"  # Cor de fundo 
+backgroundColor = "#333333"  # Cor de fundo 
 secondaryBackgroundColor = "#0288D1"  # Cor de fundo da barra lateral 
 textColor = "#E0E0E0"  # Cor do texto 
 font = "sans serif"  # Fonte
