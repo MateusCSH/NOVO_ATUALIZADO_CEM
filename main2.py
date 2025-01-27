@@ -41,8 +41,11 @@ if tipo == 'MONITOR':
         df = pd.read_csv(up, sep=',')
         # .drop(0).drop(columns=0)
         # df.rename(columns={1:'Nome',2:'Horas',3:'Motivo'}, inplace=True)
-        # df['Horas'] = df['Horas'].astype(int)
-        df = df[["Nome","Tempo de permanência (em horas)","Motivo"]]
+        df.columns = ['Carimbo de data/hora', 'Nome', 'Horas', 'Motivo']
+
+        # Agora você pode acessar as colunas com os novos nomes
+        df = df[['Nome', 'Horas', 'Motivo']]
+        df['Horas'] = df['Horas'].astype(int)
 
         
 
