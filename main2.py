@@ -38,7 +38,7 @@ if tipo == 'MONITOR':
 
     if up is not None:
 
-        df = pd.read_csv(up, header=None, sep=',')
+        df = pd.read_csv(up, sep=',')
         # .drop(0).drop(columns=0)
         # df.rename(columns={1:'Nome',2:'Horas',3:'Motivo'}, inplace=True)
         # df['Horas'] = df['Horas'].astype(int)
