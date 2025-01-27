@@ -42,7 +42,7 @@ if tipo == 'MONITOR':
         # .drop(0).drop(columns=0)
         # df.rename(columns={1:'Nome',2:'Horas',3:'Motivo'}, inplace=True)
         # df['Horas'] = df['Horas'].astype(int)
-        df = df[["Nome","Horas","Motivo"]]
+        df = df[["Nome","Tempo de permanência (em horas)","Motivo"]]
 
         
 
