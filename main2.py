@@ -38,10 +38,21 @@ if tipo == 'MONITOR':
 
     if up is not None:
 
-        df = pd.read_csv(up, sep=',')
-        # .drop(0).drop(columns=0)
-        # df.rename(columns={1:'Nome',2:'Horas',3:'Motivo'}, inplace=True)
-        df = df[["Carimbo de data/hora","Nome", "Tempo de permanência (em horas):", "Motivo"]]
+        df = pd.read_csv(up, sep=',', header=0)
+
+        # Remover espaços extras nos nomes das colunas
+        df.columns = df.columns.str.strip()
+        
+        # Renomear as colunas (se necessário)
+        df.rename(columns={
+            'Carimbo de data/hora': 'Carimbo de data/hora',
+            'Nome:': 'Nome',
+            'Tempo de permanência (em horas):': 'Horas',
+            'Motivo:': 'Motivo'
+        }, inplace=True)
+        
+        # Agora, você pode acessar as colunas sem o erro
+        df = df[["Carimbo de data/hora", "Nome", "Horas", "Motivo"]]
         
         df['Horas'] = df['Horas'].astype(int)
 
